@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addTodo , deleteUser } from './actions';
+import { addTodo , removeTodo } from './actions';
 import { connect } from 'redux-zero/react';
 import './App.css';
 
@@ -8,7 +8,7 @@ const App = ({ todos }) => {
          <li key={todo.id}>
             <img className="img-avatar" src="https://secure.gravatar.com/avatar/4468dc867fa42b5b18411c53336eb80c?s=160&d=retro&r=pg"/>
             <span className="userName">{todo.user}</span>
-            <button type="submit" name="submit" value="submit" onClick={deleteUser}>Delete</button>
+            <button type="submit" name="submit" value="submit" onClick={removeTodo}>Delete</button>
          </li>
          <li>{todo.text}</li>
       </div>);
@@ -41,7 +41,7 @@ const App = ({ todos }) => {
             </form>
          </header>
          <div className="main">
-            <h2>COMMENTS</h2>
+            <h2>Comments {todos.length}</h2>
             <ul id="invitedList">{Comment}</ul>
          </div>
       </div>

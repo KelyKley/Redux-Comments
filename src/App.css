@@ -10,6 +10,9 @@ body {
   background: #f8fdf3;
 }
 
+.soo{
+  display: hidden;
+}
 header {
  text-align: center;
  background: #9ECBD1;

@@ -12,7 +12,18 @@ export const addTodo = (text, user) => {
    });
 };
 
-export const deleteUser = (e) => {
-    let parent = e.target;
-    console.log(parent);
+export const removeTodo = (todo, text, user) => {
+    //this.todos = this.todos.filter(item => item !== todo);
+    //this.inform();
+
+    let oldList = store.getState().todos.filter(item => item !== todo);
+    const newList = oldList.splice({
+       id: oldList.length,
+       text: text,
+       user: user
+    });
+    store.setState({
+       todos: oldList
+    });
 }
+
